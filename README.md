@@ -10,3 +10,5 @@ with nltk.. To carry on this later..
 2) Not the final piece but a sketch
 
 3) basic idea is that the texts floser to the standard error messages in unix/linux have the highest possible option to detect an error.
+If one analyses the words closer to the error message, Tokenize using
+NLTK ,rank the error , , CONFIRM to the algorithm that this is the files/scripts which could be the problem, the algorithm will take care of analysing the error, 
