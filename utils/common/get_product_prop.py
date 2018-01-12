@@ -1,6 +1,6 @@
 __author__ = 'rcharanthary'
 import sys
-#sys.path.append('/bb/bis2/Python-3.3.5/packages/')
+#sys.path.append('DIRPATH2/Python-3.3.5/packages/')
 import logging
 from utils.common.fileops import fileops
 from utils.common.functions import print_class

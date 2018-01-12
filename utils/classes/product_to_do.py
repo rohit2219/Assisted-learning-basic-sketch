@@ -1,7 +1,5 @@
 __author__ = 'rcharanthary'
 import sys
-sys.path.append('/bb/bis2/Python-3.3.5/site-packages/')
-#{'productname': 'ASIAPAC', 'prod_backup_dir': 'indexprod5/asiapac/production/YYYYMMDD', 'prod_restart_scriptname': 'indexprod5/asiapac/bin/ASIAPAC-Restart-Script', 'prod_changes': 'indexprod5/asiapac/changes', 'prod_scriptname': 'indexprod5/asiapac/bin/ASIAPAC-Production-Script', 'prod_sunbond_dir': 'indexprod5/asiapac/datadir/daily', 'konsole_dir': 'indexprod5/asiapac/production/KONSOLE', 'automation_script': '/home/rcharanthary/gitbox/nightly_scripts/ASIAPAC_run.ksh /ixph YYYYMMDD', 'productdirectory': 'indexprod5/asiapac', 'prod_flags': 'indexprod5/asiapac/flags', 'prod_prices': 'indexprod5/asiapac/prices'}
 import logging
 import psutil
 from utils.common.fileops import fileops
@@ -20,9 +18,9 @@ class product_actions(object):
         self.logger=logging.getLogger("reset_product class")
         self.prin=print_class()
         self.acceptable_score=40
-        self.backupdir="/bb/bis/bisdbfiles/"+pricedate+"_daily_new"
+        self.backupdir="DIRPATH/bisdbfiles/"+pricedate+"_daily_new"
         prevdate="20170925"
-        self.prevbackupdir="/bb/bis/bisdbfiles/"+prevdate+"_daily_new"
+        self.prevbackupdir="DIRPATH/bisdbfiles/"+prevdate+"_daily_new"
         self.rsync_cmd="rsync -azv "
         self.run_shellscript=extlenvexec()
         self.daily_dir=prod_prop_dict["prod_sunbond_dir"]
@@ -31,7 +29,7 @@ class product_actions(object):
         self.flags_dir=prod_prop_dict["prod_flags"]
         self.prod_scriptname=prod_prop_dict["prod_scriptname"]
         self.prod_back_dir=prod_prop_dict["prod_backup_dir"].replace("YYYYMMDD",str(pricedate))
-        self.logfile="/bb/bis/tmp/automonitor.log"
+        self.logfile="DIRPATH/tmp/automonitor.log"
         self.save_changes=sandbox+"/"+self.change_dir+"/save-changes"
 
     def check_prod_running(self):

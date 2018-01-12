@@ -1,7 +1,6 @@
 __author__ = 'rcharanthary'
 import sys
-sys.path.append('/bb/bis2/Python-3.3.5/site-packages/')
-#{'productname': 'ASIAPAC', 'prod_backup_dir': 'indexprod5/asiapac/production/YYYYMMDD', 'prod_restart_scriptname': 'indexprod5/asiapac/bin/ASIAPAC-Restart-Script', 'prod_changes': 'indexprod5/asiapac/changes', 'prod_scriptname': 'indexprod5/asiapac/bin/ASIAPAC-Production-Script', 'prod_sunbond_dir': 'indexprod5/asiapac/datadir/daily', 'konsole_dir': 'indexprod5/asiapac/production/KONSOLE', 'automation_script': '/home/rcharanthary/gitbox/nightly_scripts/ASIAPAC_run.ksh /ixph YYYYMMDD', 'productdirectory': 'indexprod5/asiapac', 'prod_flags': 'indexprod5/asiapac/flags', 'prod_prices': 'indexprod5/asiapac/prices'}
+sys.path.append('DIRPATH2/Python-3.3.5/site-packages/')
 import logging
 import psutil
 from utils.common.fileops import fileops
@@ -23,9 +22,9 @@ class analyse_logs(object):
         self.logger=logging.getLogger("analyse_logs")
         self.prin=print_class()
         self.acceptable_score=40
-        self.backupdir="/bb/bis/bisdbfiles/"+pricedate+"_daily_new"
+        self.backupdir="DIRPATH/bisdbfiles/"+pricedate+"_daily_new"
         prevdate="20170925"
-        self.prevbackupdir="/bb/bis/bisdbfiles/"+prevdate+"_daily_new"
+        self.prevbackupdir="DIRPATH/bisdbfiles/"+prevdate+"_daily_new"
         self.rsync_cmd="rsync -azv "
         self.run_shellscript=extlenvexec()
         self.daily_dir=prod_prop_dict["prod_sunbond_dir"]
@@ -34,8 +33,8 @@ class analyse_logs(object):
         self.productdirectory=prod_prop_dict["productdirectory"]
         self.flags_dir=prod_prop_dict["prod_flags"]
         self.prod_back_dir=prod_prop_dict["prod_backup_dir"].replace("YYYYMMDD",str(pricedate))
-        self.temp_log="/bb/bis/tmp/automonitor.log"
-        self.temp_log2="/bb/bis/tmp/automonitor2.log"
+        self.temp_log="DIRPATH/tmp/automonitor.log"
+        self.temp_log2="DIRPATH/tmp/automonitor2.log"
         self.save_changes=sandbox+"/"+self.change_dir+"/save-changes"
         self.tail_cnt='100'
         self.unix_error=["file does not exist","abort","Variable syntax","cannot open","can't open"]
