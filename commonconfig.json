@@ -1,0 +1,16 @@
+{
+  "comments-not used common classes":
+  {
+    "Comment:" : "This is a json file having all config values for ROHITS common classes "
+  },
+  "pythonpath":
+  {
+    "pythonpath-append" : "/home/idxdev/lib/pythonlibtest/python3.3/custom/"
+  },
+  "SQLPARM":
+  {
+    "SQL-INI" : "/home/idxdev/conf/odbc.ini",
+    "SQL-REGION" : "MSSQL"
+  }
+}
+
